@@ -120,7 +120,7 @@ npm run lint:fix
 ## Environment Variables
 
 | Variable | Description | Default |
-|----------|-------------|---------|
+|----------|-------------|---------||
 | `PORT` | Gateway port | `3000` |
 | `NODE_ENV` | Environment | `development` |
 | `AUTH_SERVICE_URL` | Auth service URL | `http://localhost:3001` |
