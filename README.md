@@ -57,14 +57,6 @@ POST /transcriber/transcript
 DELETE /transcriber/transcript/:id
 ```
 
-### Compliance Service (Requires Auth)  
-All compliance endpoints require authentication:
-```
-GET /compliance/alerts
-POST /compliance/screen
-GET /compliance/reports
-```
-
 ## Service Configuration
 
 Configure your microservices in the `.env` file:
@@ -120,7 +112,7 @@ npm run lint:fix
 ## Environment Variables
 
 | Variable | Description | Default |
-|----------|-------------|---------||
+|----------|-------------|---------|
 | `PORT` | Gateway port | `3000` |
 | `NODE_ENV` | Environment | `development` |
 | `AUTH_SERVICE_URL` | Auth service URL | `http://localhost:3001` |
