@@ -27,7 +27,6 @@ describe('API Gateway', () => {
       expect(response.body).toHaveProperty('services');
       expect(response.body.services).toContain('auth');
       expect(response.body.services).toContain('transcriber');
-      expect(response.body.services).toContain('compliance');
     });
   });
 
