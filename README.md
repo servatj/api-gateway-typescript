@@ -1,6 +1,6 @@
 # API Gateway
 
-A TypeScript-based API Gateway for routing requests to microservices including Auth, Transcriber, and Compliance services.
+A TypeScript-based API Gateway for routing requests to microservices including Auth and Transcriber services.
 
 ## Features
 
@@ -64,7 +64,6 @@ Configure your microservices in the `.env` file:
 ```env
 AUTH_SERVICE_URL=http://localhost:3001
 TRANSCRIBER_SERVICE_URL=http://localhost:3002
-COMPLIANCE_SERVICE_URL=http://localhost:3003
 ```
 
 ## Architecture
@@ -78,8 +77,7 @@ API Gateway (Port 3000)
 │     Route Matching          │
 ├─────────────────────────────┤
 │ /auth/* → Auth Service      │
-│ /transcriber/* → Transcriber│ 
-│ /compliance/* → Compliance  │
+│ /transcriber/* → Transcriber│
 └─────────────────────────────┘
       ↓
 Middleware Chain
@@ -117,7 +115,6 @@ npm run lint:fix
 | `NODE_ENV` | Environment | `development` |
 | `AUTH_SERVICE_URL` | Auth service URL | `http://localhost:3001` |
 | `TRANSCRIBER_SERVICE_URL` | Transcriber service URL | `http://localhost:3002` |
-| `COMPLIANCE_SERVICE_URL` | Compliance service URL | `http://localhost:3003` |
 | `LOG_LEVEL` | Logging level | `info` |
 | `ALLOWED_ORIGINS` | CORS origins | `*` |
 
@@ -134,12 +131,6 @@ curl -X POST http://localhost:3000/auth/signup \
 # Get transcript (with auth)
 curl -X GET http://localhost:3000/transcriber/transcript/1234123 \
   -H "Authorization: Bearer your-jwt-token"
-
-# Compliance screening (with auth)  
-curl -X POST http://localhost:3000/compliance/screen \
-  -H "Authorization: Bearer your-jwt-token" \
-  -H "Content-Type: application/json" \
-  -d '{"entity":"test"}'
 ```
 
 ## Monitoring
