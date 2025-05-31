@@ -1,7 +1,6 @@
 import { Application } from 'express';
 import { authRoutes } from './authRoutes';
 import { transcriberRoutes } from './transcriberRoutes';
-import { complianceRoutes } from './complianceRoutes';
 import { logger } from '../services/logger';
 
 export const setupRoutes = (app: Application): void => {
@@ -13,9 +12,6 @@ export const setupRoutes = (app: Application): void => {
   // Transcriber service routes  
   app.use('/transcriber', transcriberRoutes);
 
-  // Compliance service routes
-  app.use('/compliance', complianceRoutes);
-
   // Root endpoint
   app.get('/', (req, res) => {
     res.json({
@@ -23,13 +19,11 @@ export const setupRoutes = (app: Application): void => {
       version: '1.0.0',
       services: [
         'auth',
-        'transcriber', 
-        'compliance'
+        'transcriber'
       ],
       endpoints: {
         auth: '/auth/*',
         transcriber: '/transcriber/*',
-        compliance: '/compliance/*',
         health: '/health'
       }
     });
