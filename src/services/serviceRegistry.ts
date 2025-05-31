@@ -14,13 +14,6 @@ export const serviceRegistry: Record<string, ServiceConfig> = {
     timeout: 60000,
     retries: 2,
     healthCheck: '/health'
-  },
-  compliance: {
-    name: 'compliance',
-    baseUrl: process.env.COMPLIANCE_SERVICE_URL || 'http://localhost:3003',
-    timeout: 45000,
-    retries: 3,
-    healthCheck: '/health'
   }
 };
 
