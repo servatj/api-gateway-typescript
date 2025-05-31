@@ -10,7 +10,6 @@ services:
       - PORT=3000
       - AUTH_SERVICE_URL=http://auth-service:3001
       - TRANSCRIBER_SERVICE_URL=http://transcriber-service:3002
-      - COMPLIANCE_SERVICE_URL=http://compliance-service:3003
       - LOG_LEVEL=info
     volumes:
       - ./logs:/app/logs
